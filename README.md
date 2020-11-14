@@ -1,9 +1,7 @@
 # project2app
 monitoring the progress of  sustainability initiatives at OPAIC
 
-
-
-startEJS
+FileStructure
 |--config
  |--auth.js               // contain the config for the authentications 
  |--passport.js          // contain the passport libary config code 
