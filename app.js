@@ -1,8 +1,9 @@
 // Imports
 const express = require('express')
 const app = express()
+const bodyParser = require('body-parser');
 const expressLayouts = require('express-ejs-layouts')
-const port = 3000
+const port = process.env.PORT || 3000;
 const router = express.Router();
 const mongoose = require('mongoose');
 const indexRouter = require('./routes/index')
