@@ -1,8 +1,7 @@
 const express = require('express');
 const router  = express.Router();
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 
-var url = "mongodb+srv://testuser:Project2tetkey@cluster0.fbxpx.mongodb.net/<testdb>";
 // const {ensureAuthenticated} = require('../config/auth') 
 //login page
 
@@ -19,6 +18,6 @@ router.get('/achievements', (req, res) => {
 router.get('/projects', (req, res) => {
     res.render('projects', { text: 'This the place we show the project charts'})
 });
-
+router.get
 
 module.exports = router; 

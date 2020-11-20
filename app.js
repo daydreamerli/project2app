@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser');
 const expressLayouts = require('express-ejs-layouts')
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 const router = express.Router();
 const mongoose = require('mongoose');
 const indexRouter = require('./routes/index')
@@ -19,23 +19,23 @@ app.use('/js', express.static(__dirname + 'public/js'))
 app.use('/img', express.static(__dirname + 'public/img'))
 
 // Set Views
-app.set('views', './views')
+app.set('views', ('./views'))
 app.set('view engine', 'ejs')
-app.use(expressLayouts);
-// connect to mongodb
-mongoose.connect(
-    process.env.DB_CONNECTION,
-    {useNewUrlParser: true, useUnifiedTopology : true})
-.then(() => console.log('Connected to mongodb'))
-.catch((err)=> console.log(err));
-// set routes   => move them to routes 
-// app.get('', (req, res) => {
-//     res.render('index', { text: 'This is how to use EJS in expressjs'})
-// })
+// app.use(expressLayouts);
 
-// app.get('/about', (req, res) => {
-//     res.render('about', { text: 'About Page'})
-// })
+// bodyParser middleware (returns POST requests as JSON)
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
+app.use(bodyParser.json());
+
+// connect to mongodb
+// mongoose.connect(
+//   process.env.DB_CONNECTION,
+//   {useNewUrlParser: true, useUnifiedTopology : true})
+// .then(() => console.log('connected,,'))
+// .catch((err)=> console.log(err));
+ 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     next(createError(404));
@@ -53,5 +53,5 @@ app.use(function(req, res, next) {
   });
 
 
-//  Listen on port 3000
+//  Listen on port 
 app.listen(port, () => console.info(`Listening on port ${port}`))

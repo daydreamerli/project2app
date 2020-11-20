@@ -3,141 +3,24 @@
 <html>
 
   <head>
-
+    <meta charset="UTF-8">
+    <title>OPAIC SUSTAINABILITY PROJECTS</title>
     <!-- ZingChart CDN script -->
-    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <!-- SIMPLE CSS FILE -->
     <style>
       #chart {
-        height: 300px;
-        width: 300px;
+        height: 600px;
+        width: 600px;
       }
     </style>
-
+     
   </head>
 
   <body>
-
-    <h1>Sustainability</h1>
-
-    <!-- EJS loop through entries returned from MongoDB -->
-    <ul>
-
-      <!-- inserts each entry power/water and month from MongoDB to list -->
-      <% projects.forEach(entry => { %>
-      <li><%= `Power: ${entry.power}, Water: ${entry.water}, Month: ${entry.month} ` %></li>
-      <% }); %>
-
-    </ul>
-
-    <!-- chart container -->
-    <div id="powerChart"></div>
-      
-    <div id="waterChart"></div>
-
-    <!-- fetches data from api/data page & renders chart from data returned -->
-    <script>
-
-      // creates variable for url we want to fetch
-      const url = 'http://localhost:3000/api/data';
-
-      // fetch call to our /api/data page
-      fetch(url)
-
-        // creates promise to work with response from /api/data
-        .then(res => {
-
-          // throws error if there is a problem fetching page
-          if (!res.ok) {
-
-            // returns error with response text of error
-            throw new Error(res.statusText);
-
-          }
-
-          // returns data from /api/data page in json format to next promise
-          return res.json();
-
-        })
-
-        // creates promise with returned data from previous promise
-        .then(data => {
-
-          // creates entries variable to store JSON data form /api/data
-          let entries = data;
-
-          // creates empty powerInfo array
-          let powerInfo = [];
-
-          // loops through data from entry variable
-          entries.forEach(entry => {
-
-            // pushes values from entries variable to empty entryInfo array
-            powerInfo.push([(entry.month), parseInt(entry.power)]);
-
-          });
-
-          // creates chart const with entryInfo array
-          const chart = {
-            type: 'bar', //bar, bar3d, hbar, line, ....
-              title: {
-            text: "Power consumption per month",
-            adjustLayout: true
-          },
-            series: [
-              {
-                values: powerInfo
-              }
-            ]
-          };
-
-          // renders zingchart to the page
-          zingchart.render({
-            id: 'powerChart',
-            data: chart,
-            height: '75%',
-            width: '50%'
-          });
-          
-          
-          // creates empty powerInfo array
-          let waterInfo = [];
-
-          // loops through data from entry variable
-          entries.forEach(entry => {
-
-            // pushes values from entries variable to empty entryInfo array
-            waterInfo.push([(entry.month), parseInt(entry.water)]);
-
-          });
-
-          // creates chart const with entryInfo array
-          const chart2 = {
-            type: 'bar', //bar, bar3d, hbar, line, ....
-              title: {
-            text: "Water consumption per month",
-            adjustLayout: true
-          },
-            series: [
-              {
-                values: waterInfo
-              }
-            ]
-          };
-
-          // renders zingchart to the page
-          zingchart.render({
-            id: 'waterChart',
-            data: chart2,
-            height: '75%',
-            width: '50%'
-          });
-           })
-
-        // catches errors in promise chain
-        .catch(error => console.log('fetch error'));
-
-    </script>
+    <h1><%= text %></h1>
+    <h2>This is the led projects</h2>
+  
 
   </body>
 
