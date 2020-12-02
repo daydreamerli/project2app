@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const expressLayouts = require('express-ejs-layouts')
 const port = process.env.PORT || 4000;
 const router = express.Router();
+const path = require('path');
 const mongoose = require('mongoose');
 const indexRouter = require('./routes/index')
 // const chartsRouter = require('./routes/charts');
@@ -17,10 +18,13 @@ app.use(express.static('public'))
 app.use('/css', express.static(__dirname + 'public/css'))
 app.use('/js', express.static(__dirname + 'public/js'))
 app.use('/img', express.static(__dirname + 'public/img'))
-
-// Set Views
-app.set('views', ('./views'))
+app.use('/api', express.static(__dirname + '/views/api'))
+app.use(express.static(__dirname + '/views'));
+// Set View engine
 app.set('view engine', 'ejs')
+// Set views folder
+app.set('views', path.join(__dirname, 'views'));
+
 // app.use(expressLayouts);
 
 // bodyParser middleware (returns POST requests as JSON)
@@ -29,13 +33,6 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-// connect to mongodb
-// mongoose.connect(
-//   process.env.DB_CONNECTION,
-//   {useNewUrlParser: true, useUnifiedTopology : true})
-// .then(() => console.log('connected,,'))
-// .catch((err)=> console.log(err));
- 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     next(createError(404));

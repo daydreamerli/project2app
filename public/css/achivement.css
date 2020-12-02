@@ -1,0 +1,77 @@
+.body {
+    padding: 6rem;
+    padding-top: 3%;
+}
+/* First slide */
+
+#panel1,
+#flip1 {
+    padding: 5px;
+}
+
+#panel1 {
+    display: none;
+    padding: 25px;
+}
+/* Second Slide */
+
+#panel2,
+#flip2 {
+    padding: 5px;
+}
+
+#panel2 {
+    display: none;
+    padding: 25px;
+}
+/* Third Slide */
+
+#panel3,
+#flip3 {
+    padding: 5px;
+}
+
+#panel3 {
+    display: none;
+    padding: 25px;
+}
+/* Forth Slide */
+
+#panel4,
+#flip4 {
+    padding: 5px;
+}
+
+#panel4 {
+    display: none;
+    padding: 25px;
+}
+/* Fifth Slide */
+
+#panel5,
+#flip5 {
+    padding: 5px;
+}
+
+#panel5 {
+    display: none;
+    padding: 25px;
+}
+/* table */
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}

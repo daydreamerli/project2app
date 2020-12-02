@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>                      
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUSTAINABILITY MONITOR </title>
-    <link rel="stylesheet" href="css/main.css">   
-</head>                                          
-<body>
-    <h1> WELCOME TO OPAIC SUSTAINABILITY MONITOR </h1>
-    <h2><%= text %></h2>
-    <a href="/about"> ABOUT US </a>
-    <a href="/achievements"> OP ACHIEVEMENTS </a>
-    <a href="/projects"> OPAIC SUSTAINABILITY PROJECTS </a> 
-    <h3> this is the introduction for the achivements for the past projects</h3>
 
-    <p><img src="img/slide.jpg" alt="Green" width="100%" height="500"></p>
-</body>                                         
-<footer>@COPYRIGHT TEAM2 OPAIC PROJECTS</footer>
+<head>
+<!-- link the resourse  -->
+    <%- include('../views/partials/resourse'); %>
+</head>
+<body>
+<!-- <a href="/test">test</a> -->
+    <header>
+        <!-- header part -->
+        <%- include('../views/partials/navbar1'); %>
+    </header>
+    <!-- body part -->
+    <%- include('../views/partials/body'); %>
+ 
+
+    <footer>
+        <!-- footer part -->
+        <%- include('../views/partials/footer'); %>
+    </footer>
+
+</body>
 </html>

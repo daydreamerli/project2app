@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Achievements</title>
+    <%- include('../views/partials/resourse'); %>
 </head>
 <body>
-    <h1><%= text %></h1>
-    <H2>HERE IS THE INTRODUCTION TO THE PAST ACHIENVEMENTS</H2>
-    
-    <p><img src="img/slide3.jpg" alt="Green" width="100%" height="500"></p>
+
+    <header>
+        <%- include('../views/partials/Achieve_header'); %>
+    </header>
+ 
+    <%- include('../views/partials/achievement_body'); %>
+
+   
+
+    <footer>
+        <%- include('../views/partials/footer'); %>
+    </footer>
+
 </body>
-<footer>@COPYRIGHT TEAM2 OPAIC PROJECTS</footer>
 </html>

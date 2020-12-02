@@ -1,0 +1,35 @@
+nav{
+    width: 100%;
+}
+
+.nav_background{
+    width: 100%;
+    
+}
+
+.nav_background img{
+    /* margin-top: 3%; */
+width: 100%;
+height: auto;
+}
+
+nav  .navbar-brand .op_logo{
+    /* height: 50px; */
+  width: 35%;
+}
+
+nav .container #navbarResponsive ul li{
+    font-size: 20px;
+}
+
+nav{
+    background-color: rgba(red, green, blue, alpha);
+}
+
+nav{
+    min-width: 500px;
+}
+
+
+
+
