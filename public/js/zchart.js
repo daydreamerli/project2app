@@ -43,7 +43,7 @@ fetch(url)
         for (var i = 0; i < 12; i++) {
             datasetP.push((powerInfo[i])[1]);
         }
-        for (var i = 6; i < 24; i++) {
+        for (var i = 12; i < 24; i++) {
             datasetP1.push((powerInfo[i])[1]);
         }
 
